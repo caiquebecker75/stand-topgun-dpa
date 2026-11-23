@@ -16,7 +16,9 @@
 <link rel="preload" as="image" href="arte/kv-wide.jpg" media="(min-width:861px)">
 <style>
 /* Layout: apresentação em telas, no padrão 75 LAB. Capa em cinemascope (barras de cinema com as duas marcas), depois o key visual em tira de película e o projeto. Visual único, noturno, do convés ao pôr do sol. */
-@font-face{font-family:"TopGun";src:url(topgun.ttf) format("truetype");font-display:block}
+/* fonte TOP GUN estendida (acentos, números e sinais): "TopGun" em tamanho cheio para a capa, "TopGunUI" reduzida a 70% para títulos, botões e legendas */
+@font-face{font-family:"TopGun";src:url(topgun-pt.ttf) format("truetype");font-weight:100 900;font-display:block}
+@font-face{font-family:"TopGunUI";src:url(topgun-pt.ttf) format("truetype");font-weight:100 900;size-adjust:70%;font-display:swap}
 :root{
   --bg:#070b12;
   --panel:#0e1620;
@@ -27,7 +29,7 @@
   --amber-ink:#1a1206;
   --red:#e2493b;
   --f-tg:"TopGun","Saira Condensed","Arial Narrow",sans-serif;
-  --f-display:"Saira Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-display:"TopGunUI","Saira Condensed","Arial Narrow","Roboto Condensed",sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --gut:max(20px,env(safe-area-inset-left,0px));
@@ -36,7 +38,7 @@
   color-scheme:dark;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-synthesis:none}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .mono{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
@@ -91,8 +93,8 @@ a{color:inherit}
 .lock{position:absolute;z-index:4;left:var(--gut);right:var(--gutr);bottom:calc(var(--bar) + clamp(28px,7vh,72px));display:flex;flex-direction:column;gap:clamp(10px,1.8vh,18px);align-items:flex-start;max-width:1240px}
 .lock > *{transition:opacity 1s, transform 1.1s cubic-bezier(.2,.7,.2,1), letter-spacing 1.6s cubic-bezier(.2,.7,.2,1), filter 1.1s}
 .lock .eyebrow{color:var(--amber);transition-delay:1.25s}
-.lock h1{margin:0;font-family:var(--f-tg);font-weight:400;font-size:clamp(64px,13.2vw,210px);line-height:1.12;padding:.42em .04em 0 0;margin:0 0 -.3em;letter-spacing:.012em;color:#fff;background:linear-gradient(180deg,#fff8e6 8%,#ffd58a 38%,#f2a23a 62%,#c2531f 96%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 22px rgba(226,73,59,.45)) drop-shadow(0 2px 0 rgba(90,20,12,.9));transition-delay:1.45s;text-wrap:balance}
-.lock .x{margin:0;font-family:var(--f-display);font-style:italic;font-weight:800;font-size:clamp(30px,5.2vw,78px);line-height:.9;letter-spacing:.01em;display:flex;align-items:baseline;gap:.28em;transition-delay:1.7s}
+.lock h1{margin:0;font-family:var(--f-tg);font-weight:400;font-size:clamp(64px,13.2vw,210px);line-height:1.08;padding:0 .04em 0 0;margin:0;letter-spacing:.012em;color:#fff;background:linear-gradient(180deg,#fff8e6 8%,#ffd58a 38%,#f2a23a 62%,#c2531f 96%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 22px rgba(226,73,59,.45)) drop-shadow(0 2px 0 rgba(90,20,12,.9));transition-delay:1.45s;text-wrap:balance}
+.lock .x{margin:0;font-family:var(--f-display);font-size:clamp(30px,5.2vw,78px);line-height:1;letter-spacing:.01em;display:flex;align-items:baseline;gap:.28em;transition-delay:1.7s}
 .lock .x b{color:var(--amber);font-style:normal;font-weight:500}
 .lock .sub{margin:0;max-width:44ch;font-size:clamp(15px,1.5vw,19px);color:#dfe5ea;text-shadow:0 1px 14px rgba(0,0,0,.7);transition-delay:1.95s}
 .lock .cta{display:flex;gap:10px;flex-wrap:wrap;transition-delay:2.15s}
@@ -104,8 +106,8 @@ section.tela{padding-block:clamp(64px,10vh,120px);position:relative}
 .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(28px,5vh,56px)}
 .head .mono{color:var(--amber);display:flex;align-items:center;gap:12px;margin:0 0 14px}
 .head .mono::before{content:"";width:34px;height:2px;background:var(--amber)}
-.head h2{margin:0;font-family:var(--f-display);font-weight:800;font-style:italic;font-size:clamp(40px,6.4vw,92px);line-height:.92;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
-.head h2 em{font-style:normal;font-family:var(--f-tg);font-weight:400;color:var(--amber);letter-spacing:.02em;font-size:.94em}
+.head h2{margin:0;font-family:var(--f-display);font-weight:800;font-style:italic;font-size:clamp(40px,6.4vw,92px);line-height:.98;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.head h2 em{font-style:normal;color:var(--amber)}
 .head p{margin:0;max-width:58ch;color:#cfd6dd;font-size:clamp(15.5px,1.25vw,18px)}
 
 /* key visual */
@@ -140,8 +142,8 @@ section.tela{padding-block:clamp(64px,10vh,120px);position:relative}
 .type{display:flex;flex-direction:column;gap:14px}
 .type div{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
 .type .mono{color:var(--muted)}
-.type .a{font-family:var(--f-tg);font-size:44px;line-height:1.2;padding-top:.2em}
-.type .b{font-family:var(--f-display);font-weight:800;font-style:italic;font-size:34px;line-height:1;text-transform:uppercase}
+.type .a{font-family:var(--f-tg);font-size:38px;line-height:1.1}
+.type .b{font-family:var(--f-display);font-size:30px;line-height:1.15;text-transform:uppercase;overflow-wrap:anywhere}
 .type .c{font-family:var(--f-mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:rgba(156,247,207,.9)}
 .sys h4{margin:0 0 14px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
@@ -163,7 +165,7 @@ section.tela{padding-block:clamp(64px,10vh,120px);position:relative}
 .enter img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;z-index:-2;filter:saturate(1.1)}
 .enter::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,8,14,.94) 0%,rgba(5,8,14,.72) 46%,rgba(5,8,14,.2) 100%)}
 .enter .in{padding:clamp(28px,6vw,72px);display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:720px}
-.enter h3{margin:0;font-family:var(--f-display);font-weight:800;font-style:italic;font-size:clamp(34px,5vw,68px);line-height:.94;text-transform:uppercase;text-wrap:balance}
+.enter h3{margin:0;font-family:var(--f-display);font-size:clamp(34px,5vw,68px);line-height:1;text-transform:uppercase;text-wrap:balance}
 .enter p{margin:0;color:#dfe5ea;max-width:52ch}
 .enter .cta{display:flex;gap:10px;flex-wrap:wrap}
 .enter .keys{display:flex;gap:6px;align-items:center;color:var(--muted);flex-wrap:wrap}
@@ -332,8 +334,8 @@ footer .mono b{color:var(--fg);font-weight:600}
     <div>
       <h4>Tipografia</h4>
       <div class="type">
-        <div><span class="mono">Título</span><span class="a">TOP GUN</span></div>
-        <div><span class="mono">Chamadas</span><span class="b">Toque para decolar</span></div>
+        <div><span class="mono">Marca e títulos</span><span class="a">TOP GUN</span></div>
+        <div><span class="mono">Chamadas e números</span><span class="b">Decolagem às 19:45 · cabine 02</span></div>
         <div><span class="mono">HUD e dados</span><span class="c">Cabine 02 · alt 12.400</span></div>
       </div>
     </div>
@@ -404,7 +406,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     <span class="mono"><b>Lactalis DPA+ × 75 LAB</b> · Stand Top Gun · Nov 2026</span>
     <span class="mono">Artes do KV criadas no ChatGPT · renders em Blender Cycles</span>
   </div>
-  <div class="wrap"><p class="small" style="max-width:none">Modelos 3D de terceiros: capacete "Fighter pilot helmet with attached oxygen mask", de Chenzoss, e caça "Boeing F/A-18E/F Super Hornet", de andertan (Sketchfab, CC BY 4.0). Tubulação, quadro de força, escada, extintores, caixote, galão, texturas e HDRI do Poly Haven (CC0). Fonte "TOP GUN" de P. A. Vannucci.</p></div>
+  <div class="wrap"><p class="small" style="max-width:none">Modelos 3D de terceiros: capacete "Fighter pilot helmet with attached oxygen mask", de Chenzoss, e caça "Boeing F/A-18E/F Super Hornet", de andertan (Sketchfab, CC BY 4.0). Tubulação, quadro de força, escada, extintores, caixote, galão, texturas e HDRI do Poly Haven (CC0). Fonte "TOP GUN" de P. A. Vannucci, estendida pela 75 LAB com acentos, números e sinais no mesmo traço.</p></div>
 </footer>
 
 <div id="lb" hidden role="dialog" aria-label="Render ampliado">
