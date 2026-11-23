@@ -187,13 +187,28 @@ footer img{height:44px;width:auto;display:block}
 footer .mono{color:var(--muted)}
 footer .mono b{color:var(--fg);font-weight:600}
 
+/* imagens que ampliam */
+[data-lb]{cursor:zoom-in}
+.film img[data-lb]{transition:border-color .2s, transform .3s}
+.film img[data-lb]:hover,.film img[data-lb]:focus-visible{border-color:var(--amber)}
+.zoomtag{position:absolute;z-index:3;right:var(--gutr);top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(7,11,18,.72);border:1px solid rgba(238,241,244,.4);border-radius:2px;padding:6px 10px;color:var(--fg);pointer-events:none;backdrop-filter:blur(6px)}
+.zoomtag::before{content:"";width:11px;height:11px;border:2px solid currentColor;border-radius:50%;box-shadow:5px 5px 0 -3.5px currentColor}
+.kvframe::after{display:none}
+.hero .zoomtag{top:auto;bottom:14px}
+.grid button::after{content:"";position:absolute;right:10px;top:10px;width:11px;height:11px;border:2px solid #fff;border-radius:50%;box-shadow:5px 5px 0 -3.5px #fff;opacity:0;transition:opacity .2s}
+.grid button:hover::after,.grid button:focus-visible::after{opacity:.9}
+
 /* lightbox */
 #lb{position:fixed;inset:0;z-index:60;background:rgba(3,5,8,.97);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding-top:calc(14px + env(safe-area-inset-top,0px));padding-bottom:calc(14px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 #lb[hidden]{display:none}
 #lb .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
 #lb .top .mono{color:var(--muted)}
 #lb figure{margin:0;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
-#lb figure img{max-width:100%;max-height:100%;min-height:0;object-fit:contain}
+#lb figure{overflow:auto;touch-action:pan-y}
+#lb figure img{max-width:100%;max-height:100%;min-height:0;object-fit:contain;cursor:zoom-in}
+#lb.real figure{align-items:flex-start;justify-content:flex-start}
+#lb.real figure img{max-width:none;max-height:none;cursor:zoom-out}
+#lb.real .nv{display:none}
 #lb p{margin:0;text-align:center;font-size:14.5px;color:#dfe5ea}
 #lb p b{font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);margin-right:8px}
 #lb button{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:2px;cursor:pointer;font:inherit}
@@ -277,7 +292,8 @@ footer .mono b{color:var(--fg);font-weight:600}
     <p>O key visual é uma fotografia de cinema: o caça decola do porta-aviões com o pós-combustor aceso, contra o sol baixo no horizonte. Luz âmbar, céu azul-marinho, vapor da catapulta e grão de película 35 mm. Tudo o que o visitante vê no stand sai desta imagem.</p>
   </div>
   <figure class="kvframe" id="kvFrame">
-    <img src="arte/kv-wide.jpg" alt="Key visual expandido: caça decolando do convés ao pôr do sol, em formato panorâmico" loading="lazy">
+    <img src="arte/kv-wide.jpg" alt="Key visual expandido: caça decolando do convés ao pôr do sol, em formato panorâmico" loading="lazy" data-lb="kv:0" tabindex="0" role="button" aria-label="Ampliar o key visual expandido">
+    <span class="zoomtag mono">Ampliar</span>
     <figcaption class="mono"><span>KV master · formato expandido 21:9</span><span>Película 35 mm · teleobjetiva · hora dourada</span></figcaption>
   </figure>
   <div class="wrap">
@@ -290,15 +306,15 @@ footer .mono b{color:var(--fg);font-weight:600}
 
   <div class="wrap strip-h">
     <h3>Desdobramentos por peça</h3>
-    <span class="mono">Arraste a tira →</span>
+    <span class="mono">Arraste a tira · clique para ampliar</span>
   </div>
   <div class="film" tabindex="0" aria-label="Desdobramentos do key visual">
     <ul>
-      <li><img src="arte/parede.jpg" alt="Arte da parede de fundo: pôr do sol sobre o convés com caças em formação" loading="lazy" width="1254" height="1254"><span class="mono"><b>Parede de fundo</b><span>4,00 × 3,50 m</span></span></li>
-      <li><img src="arte/tela.jpg" alt="Arte da tela das cabines: vista de dentro do cockpit" loading="lazy" width="941" height="1672"><span class="mono"><b>Tela das cabines</b><span>50" vertical</span></span></li>
-      <li><img src="arte/foto.jpg" alt="Arte do instagramável: caça na catapulta visto do convés" loading="lazy" width="941" height="1672"><span class="mono"><b>Instagramável</b><span>2,00 × 3,00 m</span></span></li>
-      <li><img src="arte/balcao.jpg" alt="Arte do balcão: capacete de piloto sobre a asa" loading="lazy" width="1448" height="1086"><span class="mono"><b>Frente do balcão</b><span>0,82 × 0,62 m</span></span></li>
-      <li><img src="arte/piso.jpg" alt="Arte do piso: convés visto de cima com faixas gastas" loading="lazy" width="1586" height="992"><span class="mono"><b>Piso de convés</b><span>4,00 × 2,50 m</span></span></li>
+      <li><img data-lb="kv:2" tabindex="0" role="button" aria-label="Ampliar a arte da parede de fundo" src="arte/parede.jpg" alt="Arte da parede de fundo: pôr do sol sobre o convés com caças em formação" loading="lazy" width="1254" height="1254"><span class="mono"><b>Parede de fundo</b><span>4,00 × 3,50 m</span></span></li>
+      <li><img data-lb="kv:3" tabindex="0" role="button" aria-label="Ampliar a arte da tela das cabines" src="arte/tela.jpg" alt="Arte da tela das cabines: vista de dentro do cockpit" loading="lazy" width="941" height="1672"><span class="mono"><b>Tela das cabines</b><span>50" vertical</span></span></li>
+      <li><img data-lb="kv:4" tabindex="0" role="button" aria-label="Ampliar a arte do instagramável" src="arte/foto.jpg" alt="Arte do instagramável: caça na catapulta visto do convés" loading="lazy" width="941" height="1672"><span class="mono"><b>Instagramável</b><span>2,00 × 3,00 m</span></span></li>
+      <li><img data-lb="kv:5" tabindex="0" role="button" aria-label="Ampliar a arte do balcão" src="arte/balcao.jpg" alt="Arte do balcão: capacete de piloto sobre a asa" loading="lazy" width="1448" height="1086"><span class="mono"><b>Frente do balcão</b><span>0,82 × 0,62 m</span></span></li>
+      <li><img data-lb="kv:6" tabindex="0" role="button" aria-label="Ampliar a arte do piso" src="arte/piso.jpg" alt="Arte do piso: convés visto de cima com faixas gastas" loading="lazy" width="1586" height="992"><span class="mono"><b>Piso de convés</b><span>4,00 × 2,50 m</span></span></li>
     </ul>
   </div>
 
@@ -332,7 +348,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     </div>
     <p>Dez metros quadrados abertos nos três lados, marcados por quatro lâminas em forma de estabilizador de caça. Ao lado, fora do stand, um instagramável com o caça suspenso e capacetes de piloto para a foto. As duas filas ficam no corredor.</p>
   </div>
-  <figure class="hero"><img id="heroImg" src="renders/corredor.jpg" alt="Render do stand visto do corredor" width="1920" height="1080" loading="lazy"></figure>
+  <figure class="hero"><img id="heroImg" src="renders/corredor.jpg" alt="Render do stand visto do corredor" width="1920" height="1080" loading="lazy" data-lb="r:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor"><span class="zoomtag mono">Ampliar</span></figure>
   <div class="wrap">
     <div class="nums">
       <div><b>10 + 5 m²</b><span>stand de 4,00 × 2,50 m e instagramável de 2,00 × 2,50 m</span></div>
@@ -392,7 +408,7 @@ footer .mono b{color:var(--fg);font-weight:600}
 </footer>
 
 <div id="lb" hidden role="dialog" aria-label="Render ampliado">
-  <div class="top"><span class="mono" id="lbN"></span><button class="x" id="lbX" type="button">Fechar</button></div>
+  <div class="top"><span class="mono" id="lbN"></span><span style="display:flex;gap:8px"><button class="x" id="lbZ" type="button">Tamanho real</button><button class="x" id="lbX" type="button">Fechar</button></span></div>
   <figure><img id="lbI" alt=""><button class="nv pv" id="lbP" type="button" aria-label="Anterior">‹</button><button class="nv nx" id="lbQ" type="button" aria-label="Próximo">›</button></figure>
   <p id="lbC"></p>
 </div>
@@ -467,16 +483,44 @@ const grid = $('#grid');
 RENDERS.slice(1).forEach(([k, n], i) => {
   const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ampliar: ' + n);
   b.innerHTML = `<img src="renders/${k}.jpg" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
-  b.addEventListener('click', () => openLb(i + 1)); grid.appendChild(b);
+  b.dataset.lb = 'r:' + (i + 1); grid.appendChild(b);
 });
-const lb = $('#lb'); let li = 0;
-function openLb(i){ li = (i + RENDERS.length) % RENDERS.length; const [k, n, d] = RENDERS[li]; $('#lbI').src = `renders/${k}.jpg`; $('#lbI').alt = n; $('#lbC').innerHTML = `<b>${n}</b>${d}`; $('#lbN').textContent = `Render ${String(li + 1).padStart(2, '0')} / ${String(RENDERS.length).padStart(2, '0')} · Cycles · 1920 × 1080`; lb.hidden = false; }
-$('#heroImg').addEventListener('click', () => openLb(0));
-$('#lbX').addEventListener('click', () => lb.hidden = true);
-$('#lbP').addEventListener('click', () => openLb(li - 1));
-$('#lbQ').addEventListener('click', () => openLb(li + 1));
-lb.addEventListener('click', e => { if (e.target === lb || e.target.tagName === 'FIGURE') lb.hidden = true; });
-addEventListener('keydown', e => { if (lb.hidden) return; if (e.key === 'Escape') lb.hidden = true; if (e.key === 'ArrowRight') openLb(li + 1); if (e.key === 'ArrowLeft') openLb(li - 1); });
+/* ---------- ampliar imagens ---------- */
+const GROUPS = {
+  kv: { label: 'Key visual', tech: 'ChatGPT · foto em película', items: [
+    ['arte/kv-wide.jpg', 'Key visual expandido', 'Formato panorâmico 21:9, usado na capa e como referência de luz do stand.'],
+    ['arte/kv.jpg', 'Key visual master', 'A imagem de origem: o caça decola do convés com o pós-combustor aceso.'],
+    ['arte/parede.jpg', 'Parede de fundo', '4,00 × 3,50 m, tecido backlight. O sol fica atrás do painel de ranking.'],
+    ['arte/tela.jpg', 'Tela das cabines', 'TV 50" na vertical: a vista de dentro do cockpit, por baixo do HUD do jogo.'],
+    ['arte/foto.jpg', 'Instagramável', '2,00 × 3,00 m: o caça na catapulta, por trás do neon "Eu sou piloto".'],
+    ['arte/balcao.jpg', 'Frente do balcão', '0,82 × 0,62 m, acrílico retroiluminado com o capacete sobre a asa.'],
+    ['arte/piso.jpg', 'Piso de convés', '4,00 × 2,50 m, adesivo de piso com as faixas gastas do porta-aviões.'],
+  ] },
+  r: { label: 'Render', tech: 'Cycles · 1920 × 1080', items: RENDERS.map(([k, n, d]) => [`renders/${k}.jpg`, n, d]) },
+};
+const lb = $('#lb'), lbI = $('#lbI'); let lg = 'r', li = 0, lastFocus = null;
+function openLb(i, g = 'r'){
+  if (lb.hidden) lastFocus = document.activeElement;
+  lg = g; const it = GROUPS[g].items; li = (i + it.length) % it.length; const [src, n, d] = it[li];
+  lb.classList.remove('real'); $('#lbZ').textContent = 'Tamanho real';
+  lbI.src = src; lbI.alt = n; $('#lbC').innerHTML = `<b>${n}</b>${d}`;
+  $('#lbN').textContent = `${GROUPS[g].label} ${String(li + 1).padStart(2, '0')} / ${String(it.length).padStart(2, '0')} · ${GROUPS[g].tech}`;
+  lb.hidden = false; document.documentElement.style.overflow = 'hidden'; $('#lbX').focus();
+}
+function closeLb(){ lb.hidden = true; document.documentElement.style.overflow = ''; if (lastFocus) lastFocus.focus({ preventScroll: true }); }
+function toggleReal(){ const on = lb.classList.toggle('real'); $('#lbZ').textContent = on ? 'Ajustar à tela' : 'Tamanho real'; }
+document.addEventListener('click', e => { const el = e.target.closest('[data-lb]'); if (!el) return; const [g, i] = el.dataset.lb.split(':'); openLb(+i, g); });
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('img[data-lb]')) { e.preventDefault(); e.target.click(); } });
+$('#lbX').addEventListener('click', closeLb);
+$('#lbZ').addEventListener('click', toggleReal);
+lbI.addEventListener('click', toggleReal);
+$('#lbP').addEventListener('click', () => openLb(li - 1, lg));
+$('#lbQ').addEventListener('click', () => openLb(li + 1, lg));
+lb.addEventListener('click', e => { if (e.target === lb || e.target.tagName === 'FIGURE') closeLb(); });
+addEventListener('keydown', e => { if (lb.hidden) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowRight') openLb(li + 1, lg); if (e.key === 'ArrowLeft') openLb(li - 1, lg); });
+let tx = null;
+lb.addEventListener('touchstart', e => { tx = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+lb.addEventListener('touchend', e => { if (tx === null || lb.classList.contains('real')) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 60) openLb(li + (dx < 0 ? 1 : -1), lg); tx = null; }, { passive: true });
 
 /* ---------- elementos ---------- */
 const ELS = [
