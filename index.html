@@ -252,7 +252,8 @@ footer .mono b{color:var(--fg);font-weight:600}
   <nav aria-label="Seções">
     <a href="#capa">Capa</a>
     <a href="#kv">Key visual</a>
-    <a href="#projeto">Projeto</a>
+    <a href="#projeto">Stand completo</a>
+    <a href="#essencial">Versão Essencial</a>
     <a class="go" href="3d.html">Entrar em 3D</a>
   </nav>
 </div>
@@ -345,7 +346,7 @@ footer .mono b{color:var(--fg);font-weight:600}
 <section class="tela" id="projeto">
   <div class="wrap head">
     <div>
-      <p class="mono">O projeto</p>
+      <p class="mono">Versão completa</p>
       <h2>O stand, pronto para <em>decolar</em></h2>
     </div>
     <p>Dez metros quadrados abertos nos três lados, marcados por quatro lâminas em forma de estabilizador de caça. Ao lado, fora do stand, um instagramável com o caça suspenso e capacetes de piloto para a foto. As duas filas ficam no corredor.</p>
@@ -394,6 +395,63 @@ footer .mono b{color:var(--fg);font-weight:600}
           <dt>Tablado</dt><dd>5 cm com rampa</dd>
         </dl>
         <p class="small">Capacidade e carga elétrica são estimativas para orçamento. As telas de jogo e o ranking mostram conteúdo ilustrativo: o game está sendo desenvolvido à parte. As marcas Top Gun, DPA+ e Lactalis aparecem como áreas de aplicação e devem ser substituídas pelas artes oficiais e licenciadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tela" id="essencial">
+  <div class="wrap head">
+    <div>
+      <p class="mono">Versão Essencial</p>
+      <h2>A mesma missão, em montagem <em>enxuta</em></h2>
+    </div>
+    <p>Os mesmos dez metros quadrados, as três cabines com TV 50" touch, o letreiro iluminado e o instagramável ao lado. Sai a cenografia pesada: a parede vira tecido impresso iluminado pela frente, os totens ficam lisos, o ranking vai para uma TV e o piso é carpete, no nível do corredor.</p>
+  </div>
+  <figure class="hero"><img src="renders-essencial/corredor.jpg" alt="Render da versão Essencial vista do corredor" width="1920" height="1080" loading="lazy" data-lb="e:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor da versão Essencial"><span class="zoomtag mono">Ampliar</span></figure>
+  <div class="wrap">
+    <div class="nums">
+      <div><b>10 + 5 m²</b><span>a mesma área: stand de 4,00 × 2,50 m e instagramável de 2,00 × 2,50 m</span></div>
+      <div><b>3</b><span>cabines com a mesma TV 50" touch na vertical</span></div>
+      <div><b>3,44 m</b><span>topo do letreiro em letra-caixa com neon flex</span></div>
+      <div><b>1 dia</b><span>de montagem no pavilhão (a versão completa leva 2)</span></div>
+    </div>
+    <div class="grid" id="gridE"></div>
+
+    <div class="enter">
+      <img src="renders-essencial/aerea.jpg" alt="" loading="lazy">
+      <div class="in">
+        <p class="mono" style="color:var(--amber);margin:0">Modelo navegável</p>
+        <h3>Entre na versão Essencial</h3>
+        <p>O mesmo passeio em 3D, agora na montagem enxuta. Compare com a versão completa elemento por elemento.</p>
+        <div class="cta">
+          <a class="btn" href="essencial.html">Explorar em 3D</a>
+          <a class="btn ghost" href="essencial.html#passear">Passear pelo stand</a>
+        </div>
+        <p class="keys mono"><kbd>↑</kbd><kbd>↓</kbd> andar <kbd>←</kbd><kbd>→</kbd> virar <kbd>Shift</kbd> correr</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>O que muda</h3>
+        <ol class="els" id="elsE"></ol>
+      </div>
+      <div>
+        <h3>Ficha técnica</h3>
+        <dl class="spec">
+          <dt>Stand</dt><dd>10,00 m² (4,00 × 2,50 m)</dd>
+          <dt>Instagramável</dt><dd>+5,00 m² (2,00 × 2,50 m)</dd>
+          <dt>Laterais</dt><dd>abertas, 4 divisórias</dd>
+          <dt>Parede de fundo</dt><dd>2,95 m, tecido impresso</dd>
+          <dt>Altura máxima</dt><dd>3,44 m (letreiro)</dd>
+          <dt>Telas de jogo</dt><dd>3 TVs 50" touch verticais</dd>
+          <dt>Ranking</dt><dd>TV de 55"</dd>
+          <dt>Fila</dt><dd>1, no corredor</dd>
+          <dt>Carga elétrica</dt><dd>~1,4 kW (pedir 3 kVA)</dd>
+          <dt>Piso</dt><dd>carpete, sem tablado</dd>
+        </dl>
+        <p class="small">Carga elétrica é estimativa para orçamento. As telas de jogo e o ranking mostram conteúdo ilustrativo: o game está sendo desenvolvido à parte. As marcas Top Gun, DPA+ e Lactalis aparecem como áreas de aplicação e devem ser substituídas pelas artes oficiais e licenciadas.</p>
       </div>
     </div>
   </div>
@@ -487,6 +545,33 @@ RENDERS.slice(1).forEach(([k, n], i) => {
   b.innerHTML = `<img src="renders/${k}.jpg" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
   b.dataset.lb = 'r:' + (i + 1); grid.appendChild(b);
 });
+/* ---------- versão Essencial ---------- */
+const RENDERS_E = [
+  ['corredor', 'Vista do corredor', 'Versão Essencial: letreiro iluminado, três cabines com TV vertical e o instagramável ao lado.'],
+  ['frontal', 'Frontal', 'Stand e instagramável lado a lado, no nível do corredor, com a fila à frente.'],
+  ['letreiro', 'Letreiro e ranking', 'O mesmo letreiro em letra-caixa com neon flex vermelho e a TV de ranking logo abaixo.'],
+  ['insta', 'Instagramável', 'Backdrop impresso com o título e dois capacetes para a foto.'],
+  ['cabine', 'Dentro da cabine', 'A mesma TV 50" vertical touch, num totem liso preto.'],
+  ['balcao', 'Balcão do promotor', 'Cadastro no tablet, produtos no tampo e a arte do capacete na frente.'],
+  ['aerea', 'Aérea', 'Implantação: 10 m² de stand, 5 m² de instagramável e a fila no corredor.'],
+];
+const gridE = $('#gridE');
+RENDERS_E.slice(1, 6).forEach(([k, n], i) => {
+  const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ampliar: ' + n);
+  b.innerHTML = `<img src="renders-essencial/${k}.jpg" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
+  b.dataset.lb = 'e:' + (i + 1); gridE.appendChild(b);
+});
+$('#elsE').innerHTML = [
+  ['Parede de fundo', 'Tecido impresso com a arte do key visual, iluminado pela frente por spots. Sem luz por trás.'],
+  ['Totens', 'Corpo liso preto com a mesma TV 50" touch na vertical. Sem capuz, abas e neon.'],
+  ['Ranking', 'TV de 55" acima da cabine central, no lugar do painel de LED.'],
+  ['Letreiro', 'O mesmo: letra-caixa iluminada com neon flex vermelho no contorno.'],
+  ['Divisórias', 'A mesma forma de estabilizador de caça, em preto, com neon âmbar na borda.'],
+  ['Instagramável', 'Backdrop impresso com o título e os capacetes para a foto. Sem caça suspenso e sem neons.'],
+  ['Piso', 'Carpete grafite com fita zebrada na borda. Sem tablado e sem degrau.'],
+  ['Fila e detalhes', 'Uma fila no corredor. Sem tubulação, props e luzes de piso.'],
+].map(([a, b], i) => `<li><i>${String(i + 1).padStart(2, '0')}</i><div><b>${a}</b><span>${b}</span></div></li>`).join('');
+
 /* ---------- ampliar imagens ---------- */
 const GROUPS = {
   kv: { label: 'Key visual', tech: 'ChatGPT · foto em película', items: [
@@ -499,6 +584,7 @@ const GROUPS = {
     ['arte/piso.jpg', 'Piso de convés', '4,00 × 2,50 m, adesivo de piso com as faixas gastas do porta-aviões.'],
   ] },
   r: { label: 'Render', tech: 'Cycles · 1920 × 1080', items: RENDERS.map(([k, n, d]) => [`renders/${k}.jpg`, n, d]) },
+  e: { label: 'Versão Essencial', tech: 'Cycles · 1920 × 1080', items: RENDERS_E.map(([k, n, d]) => [`renders-essencial/${k}.jpg`, n, d]) },
 };
 const lb = $('#lb'), lbI = $('#lbI'); let lg = 'r', li = 0, lastFocus = null;
 function openLb(i, g = 'r'){
