@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Saira+Condensed:ital,wght@0,500;0,700;0,800;1,800&family=Anton&display=swap">
-<link rel="preload" as="image" href="arte/kv-wide.jpg" media="(min-width:861px)">
+<link rel="preload" as="image" href="arte/kv-wide.jpg?v=r01" media="(min-width:861px)">
 <style>
 /* Layout: apresentação em telas, no padrão 75 LAB. Capa em cinemascope (barras de cinema com as duas marcas), depois o key visual em tira de película e o projeto. Visual único, noturno, com o céu azul do KV da Convenção de Vendas 2027. */
 /* fonte TOP GUN estendida (acentos, números e sinais): "TopGun" em tamanho cheio para a capa, "TopGunUI" reduzida a 70% para títulos, botões e legendas */
@@ -253,7 +253,7 @@ footer .mono b{color:var(--fg);font-weight:600}
 </style>
 
 <div id="nav">
-  <img src="marca/75lab-branco.svg" alt="75 LAB" width="37" height="26">
+  <img src="marca/75lab-branco.svg?v=r01" alt="75 LAB" width="37" height="26">
   <span class="t">ACELERA<i>+DPA</i></span>
   <nav aria-label="Seções">
     <a href="#capa">Capa</a>
@@ -265,19 +265,19 @@ footer .mono b{color:var(--fg);font-weight:600}
 </div>
 
 <header id="capa" class="intro">
-  <picture><img class="bgimg" id="capaImg" src="arte/kv-wide.jpg" alt="Piloto no cockpit com a esquadrilha em formação e fumaça branca sobre as nuvens" fetchpriority="high"></picture>
+  <picture><img class="bgimg" id="capaImg" src="arte/kv-wide.jpg?v=r01" alt="Piloto no cockpit com a esquadrilha em formação e fumaça branca sobre as nuvens" fetchpriority="high"></picture>
   <div class="shade"></div>
   <canvas id="embers" aria-hidden="true"></canvas>
   <div id="grain" aria-hidden="true"></div>
   <div class="cbar top">
     <span class="mono"><b>Lactalis DPA</b> × <b>75 LAB</b> · Proposta de cenografia</span>
-    <img src="marca/75lab-branco.svg" alt="75 LAB" width="48" height="34">
+    <img src="marca/75lab-branco.svg?v=r01" alt="75 LAB" width="48" height="34">
   </div>
   <i class="hud a"></i><i class="hud b"></i><i class="hud c"></i><i class="hud d"></i>
   <div class="ladder mono" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="lock">
     <p class="mono eyebrow">Convenção de Vendas 2027 · stand gamificado</p>
-    <h1 class="marca"><img src="marca/acelera-kv.svg" alt="" width="640" height="326"><span>Esquadrão Acelera +DPA</span></h1>
+    <h1 class="marca"><img src="marca/acelera-kv.svg?v=r01" alt="" width="640" height="326"><span>Esquadrão Acelera +DPA</span></h1>
     <p class="sub">O céu da convenção dentro do pavilhão: três cabines de jogo, o letreiro ACELERA +DPA iluminado, um caça voando sobre a área de foto e fila de decolagem no corredor.</p>
     <div class="cta">
       <a class="btn" href="#kv">Iniciar briefing</a>
@@ -300,7 +300,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     <p>O key visual é o da Convenção de Vendas 2027, enviado pela Lactalis: o Esquadrão Acelera +DPA em formação, com fumaça branca, sobre um céu azul profundo e nuvens acesas pelo sol, visto de dentro do cockpit. Tudo o que o visitante vê no stand sai dele: o letreiro com as asas, a parede, as telas, o balcão e o instagramável.</p>
   </div>
   <figure class="kvframe" id="kvFrame">
-    <img src="arte/kv.jpg" alt="KV da Convenção de Vendas 2027: Esquadrão Acelera +DPA, potência para voar mais alto" loading="lazy" data-lb="kv:1" tabindex="0" role="button" aria-label="Ampliar o key visual expandido">
+    <img src="arte/kv.jpg?v=r01" alt="KV da Convenção de Vendas 2027: Esquadrão Acelera +DPA, potência para voar mais alto" loading="lazy" data-lb="kv:1" tabindex="0" role="button" aria-label="Ampliar o key visual expandido">
     <span class="zoomtag mono">Ampliar</span>
     <figcaption class="mono"><span>KV oficial · Convenção de Vendas 2027</span><span>Céu azul · esquadrilha · HUD verde</span></figcaption>
   </figure>
@@ -318,11 +318,11 @@ footer .mono b{color:var(--fg);font-weight:600}
   </div>
   <div class="film" tabindex="0" aria-label="Desdobramentos do key visual">
     <ul>
-      <li><img data-lb="kv:2" tabindex="0" role="button" aria-label="Ampliar a arte da parede de fundo" src="arte/parede.jpg" alt="Arte da parede de fundo: esquadrilha em leque com fumaça branca sobre as nuvens" loading="lazy" width="1167" height="1167"><span class="mono"><b>Parede de fundo</b><span>4,00 × 3,50 m</span></span></li>
-      <li><img data-lb="kv:3" tabindex="0" role="button" aria-label="Ampliar a arte da tela das cabines" src="arte/tela.jpg" alt="Arte da tela das cabines: vista de dentro do cockpit com a esquadrilha à frente" loading="lazy" width="876" height="1555"><span class="mono"><b>Tela das cabines</b><span>50" vertical</span></span></li>
-      <li><img data-lb="kv:4" tabindex="0" role="button" aria-label="Ampliar a arte do instagramável" src="arte/foto.jpg" alt="Arte do instagramável: esquadrilha no alto com fumaça descendo até as nuvens" loading="lazy" width="876" height="1555"><span class="mono"><b>Instagramável</b><span>2,00 × 3,00 m</span></span></li>
-      <li><img data-lb="kv:5" tabindex="0" role="button" aria-label="Ampliar a arte do balcão" src="arte/balcao.jpg" alt="Arte do balcão: capacete de piloto com máscara sobre a asa, esquadrilha ao fundo" loading="lazy" width="1347" height="1009"><span class="mono"><b>Frente do balcão</b><span>0,82 × 0,62 m</span></span></li>
-      <li><img data-lb="kv:6" tabindex="0" role="button" aria-label="Ampliar a arte do piso" src="arte/piso.jpg" alt="Arte do piso: convés visto de cima com faixas gastas" loading="lazy" width="1586" height="992"><span class="mono"><b>Piso de convés</b><span>4,00 × 2,50 m</span></span></li>
+      <li><img data-lb="kv:2" tabindex="0" role="button" aria-label="Ampliar a arte da parede de fundo" src="arte/parede.jpg?v=r01" alt="Arte da parede de fundo: esquadrilha em leque com fumaça branca sobre as nuvens" loading="lazy" width="1167" height="1167"><span class="mono"><b>Parede de fundo</b><span>4,00 × 3,50 m</span></span></li>
+      <li><img data-lb="kv:3" tabindex="0" role="button" aria-label="Ampliar a arte da tela das cabines" src="arte/tela.jpg?v=r01" alt="Arte da tela das cabines: vista de dentro do cockpit com a esquadrilha à frente" loading="lazy" width="876" height="1555"><span class="mono"><b>Tela das cabines</b><span>50" vertical</span></span></li>
+      <li><img data-lb="kv:4" tabindex="0" role="button" aria-label="Ampliar a arte do instagramável" src="arte/foto.jpg?v=r01" alt="Arte do instagramável: esquadrilha no alto com fumaça descendo até as nuvens" loading="lazy" width="876" height="1555"><span class="mono"><b>Instagramável</b><span>2,00 × 3,00 m</span></span></li>
+      <li><img data-lb="kv:5" tabindex="0" role="button" aria-label="Ampliar a arte do balcão" src="arte/balcao.jpg?v=r01" alt="Arte do balcão: capacete de piloto com máscara sobre a asa, esquadrilha ao fundo" loading="lazy" width="1347" height="1009"><span class="mono"><b>Frente do balcão</b><span>0,82 × 0,62 m</span></span></li>
+      <li><img data-lb="kv:6" tabindex="0" role="button" aria-label="Ampliar a arte do piso" src="arte/piso.jpg?v=r01" alt="Arte do piso: convés visto de cima com faixas gastas" loading="lazy" width="1586" height="992"><span class="mono"><b>Piso de convés</b><span>4,00 × 2,50 m</span></span></li>
     </ul>
   </div>
 
@@ -357,7 +357,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     </div>
     <p>Dez metros quadrados abertos nos três lados, marcados por quatro lâminas em forma de estabilizador de caça. Ao lado, fora do stand, um instagramável com o caça suspenso e capacetes de piloto para a foto. As duas filas ficam no corredor.</p>
   </div>
-  <figure class="hero"><img id="heroImg" src="renders/corredor.jpg" alt="Render do stand visto do corredor" width="1920" height="1080" loading="lazy" data-lb="r:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor"><span class="zoomtag mono">Ampliar</span></figure>
+  <figure class="hero"><img id="heroImg" src="renders/corredor.jpg?v=r01" alt="Render do stand visto do corredor" width="1920" height="1080" loading="lazy" data-lb="r:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor"><span class="zoomtag mono">Ampliar</span></figure>
   <div class="wrap">
     <div class="nums">
       <div><b>10 + 5 m²</b><span>stand de 4,00 × 2,50 m e instagramável de 2,00 × 2,50 m</span></div>
@@ -368,7 +368,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     <div class="grid" id="grid"></div>
 
     <div class="enter">
-      <img src="renders/fila.jpg" alt="" loading="lazy">
+      <img src="renders/fila.jpg?v=r01" alt="" loading="lazy">
       <div class="in">
         <p class="mono" style="color:var(--amber);margin:0">Modelo navegável</p>
         <h3>Entre no stand</h3>
@@ -414,7 +414,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     </div>
     <p>Os mesmos dez metros quadrados, as três cabines com TV 50" touch, o letreiro iluminado e o instagramável ao lado. Sai a cenografia pesada: a parede vira tecido impresso iluminado pela frente, os totens ficam lisos, o ranking vai para uma TV e o piso é carpete, no nível do corredor.</p>
   </div>
-  <figure class="hero"><img src="renders-essencial/corredor.jpg" alt="Render da versão Essencial vista do corredor" width="1920" height="1080" loading="lazy" data-lb="e:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor da versão Essencial"><span class="zoomtag mono">Ampliar</span></figure>
+  <figure class="hero"><img src="renders-essencial/corredor.jpg?v=r01" alt="Render da versão Essencial vista do corredor" width="1920" height="1080" loading="lazy" data-lb="e:0" tabindex="0" role="button" aria-label="Ampliar o render do corredor da versão Essencial"><span class="zoomtag mono">Ampliar</span></figure>
   <div class="wrap">
     <div class="nums">
       <div><b>10 + 5 m²</b><span>a mesma área: stand de 4,00 × 2,50 m e instagramável de 2,00 × 2,50 m</span></div>
@@ -425,7 +425,7 @@ footer .mono b{color:var(--fg);font-weight:600}
     <div class="grid" id="gridE"></div>
 
     <div class="enter">
-      <img src="renders-essencial/aerea.jpg" alt="" loading="lazy">
+      <img src="renders-essencial/aerea.jpg?v=r01" alt="" loading="lazy">
       <div class="in">
         <p class="mono" style="color:var(--amber);margin:0">Modelo navegável</p>
         <h3>Entre na versão Essencial</h3>
@@ -466,7 +466,7 @@ footer .mono b{color:var(--fg);font-weight:600}
 
 <footer>
   <div class="wrap">
-    <img src="marca/75lab-branco.svg" alt="75 LAB" width="62" height="44">
+    <img src="marca/75lab-branco.svg?v=r01" alt="75 LAB" width="62" height="44">
     <span class="mono"><b>Lactalis DPA × 75 LAB</b> · Stand Esquadrão Acelera +DPA · Nov 2026</span>
     <span class="mono">Artes do KV criadas no ChatGPT · renders em Blender Cycles</span>
   </div>
@@ -486,7 +486,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ---------- capa: abertura em cinemascope ---------- */
 const capa = $('#capa'), capaImg = $('#capaImg');
 const openCapa = () => capa.classList.remove('intro');
-capaImg.addEventListener('error', () => { capaImg.src = 'arte/kv.jpg'; }, { once: true });
+capaImg.addEventListener('error', () => { capaImg.src = 'arte/kv.jpg?v=r01'; }, { once: true });
 if (reduced) capa.classList.remove('intro');
 else if (capaImg.complete && capaImg.naturalWidth) setTimeout(openCapa, 250);
 else { capaImg.addEventListener('load', () => setTimeout(openCapa, 250), { once: true }); setTimeout(openCapa, 3500); }
@@ -548,7 +548,7 @@ const RENDERS = [
 const grid = $('#grid');
 RENDERS.slice(1).forEach(([k, n], i) => {
   const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ampliar: ' + n);
-  b.innerHTML = `<img src="renders/${k}.jpg" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
+  b.innerHTML = `<img src="renders/${k}.jpg?v=r01" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
   b.dataset.lb = 'r:' + (i + 1); grid.appendChild(b);
 });
 /* ---------- versão Essencial ---------- */
@@ -564,7 +564,7 @@ const RENDERS_E = [
 const gridE = $('#gridE');
 RENDERS_E.slice(1, 6).forEach(([k, n], i) => {
   const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ampliar: ' + n);
-  b.innerHTML = `<img src="renders-essencial/${k}.jpg" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
+  b.innerHTML = `<img src="renders-essencial/${k}.jpg?v=r01" alt="" loading="lazy" width="1920" height="1080"><span>${n}</span>`;
   b.dataset.lb = 'e:' + (i + 1); gridE.appendChild(b);
 });
 $('#elsE').innerHTML = [
@@ -581,16 +581,16 @@ $('#elsE').innerHTML = [
 /* ---------- ampliar imagens ---------- */
 const GROUPS = {
   kv: { label: 'Key visual', tech: 'KV da convenção · desdobramentos no ChatGPT', items: [
-    ['arte/kv-wide.jpg', 'Key visual expandido', 'Formato panorâmico 21:9, sem texto, usado na capa com a marca em vetor.'],
-    ['arte/kv.jpg', 'KV oficial', 'Convenção de Vendas 2027: Esquadrão Acelera +DPA, potência para voar mais alto.'],
-    ['arte/parede.jpg', 'Parede de fundo', '4,00 × 3,50 m, tecido backlight. A esquadrilha sobe à direita; o alto escurece para os neons.'],
-    ['arte/tela.jpg', 'Tela das cabines', 'TV 50" na vertical: a vista de dentro do cockpit, por baixo do HUD do jogo.'],
-    ['arte/foto.jpg', 'Instagramável', '2,00 × 3,00 m: a esquadrilha no alto, por trás do neon "Eu sou do Esquadrão".'],
-    ['arte/balcao.jpg', 'Frente do balcão', '0,82 × 0,62 m, acrílico retroiluminado com o capacete do KV e a marca.'],
-    ['arte/piso.jpg', 'Piso de convés', '4,00 × 2,50 m, adesivo de piso com as faixas gastas do porta-aviões.'],
+    ['arte/kv-wide.jpg?v=r01', 'Key visual expandido', 'Formato panorâmico 21:9, sem texto, usado na capa com a marca em vetor.'],
+    ['arte/kv.jpg?v=r01', 'KV oficial', 'Convenção de Vendas 2027: Esquadrão Acelera +DPA, potência para voar mais alto.'],
+    ['arte/parede.jpg?v=r01', 'Parede de fundo', '4,00 × 3,50 m, tecido backlight. A esquadrilha sobe à direita; o alto escurece para os neons.'],
+    ['arte/tela.jpg?v=r01', 'Tela das cabines', 'TV 50" na vertical: a vista de dentro do cockpit, por baixo do HUD do jogo.'],
+    ['arte/foto.jpg?v=r01', 'Instagramável', '2,00 × 3,00 m: a esquadrilha no alto, por trás do neon "Eu sou do Esquadrão".'],
+    ['arte/balcao.jpg?v=r01', 'Frente do balcão', '0,82 × 0,62 m, acrílico retroiluminado com o capacete do KV e a marca.'],
+    ['arte/piso.jpg?v=r01', 'Piso de convés', '4,00 × 2,50 m, adesivo de piso com as faixas gastas do porta-aviões.'],
   ] },
-  r: { label: 'Render', tech: 'Cycles · 1920 × 1080', items: RENDERS.map(([k, n, d]) => [`renders/${k}.jpg`, n, d]) },
-  e: { label: 'Versão Essencial', tech: 'Cycles · 1920 × 1080', items: RENDERS_E.map(([k, n, d]) => [`renders-essencial/${k}.jpg`, n, d]) },
+  r: { label: 'Render', tech: 'Cycles · 1920 × 1080', items: RENDERS.map(([k, n, d]) => [`renders/${k}.jpg?v=r01`, n, d]) },
+  e: { label: 'Versão Essencial', tech: 'Cycles · 1920 × 1080', items: RENDERS_E.map(([k, n, d]) => [`renders-essencial/${k}.jpg?v=r01`, n, d]) },
 };
 const lb = $('#lb'), lbI = $('#lbI'); let lg = 'r', li = 0, lastFocus = null;
 function openLb(i, g = 'r'){
